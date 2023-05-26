@@ -11,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+
 import java.util.UUID;
 
 @Service
@@ -61,5 +62,9 @@ public class AppUserService implements UserDetailsService {
         // TODO: SEND EMAIL
 
         return token;
+    }
+
+    public int enableAppUser(String email) {
+       return appUserRepository.enableAppUser(email);
     }
 }
